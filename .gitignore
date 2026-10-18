@@ -1,0 +1,19 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+*.pem
+
+# Ansible
+inventory.ini
+!task1-switch-automation/ansible/inventory.ini
+vault.yml
+*.retry
+
+# Python / IDE
+__pycache__/
+.venv/
+.idea/
+.vscode/

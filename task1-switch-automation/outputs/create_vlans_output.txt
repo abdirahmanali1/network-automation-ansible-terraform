@@ -1,0 +1,107 @@
+Connecting to IT_Network (10.10.1.21)...
+Creating VLAN IT_Network with tag 10...
+$ create vlan IT_Network
+$ configure vlan IT_Network tag 10
+
+Untagged ports auto-move: Inform
+-----------------------------------------------------------------------------------------------
+Name            VID  Protocol Addr       Flags                         Proto  Ports  Virtual   
+                                                                              Active router
+                                                                              /Total
+-----------------------------------------------------------------------------------------------
+Default         1    10.10.1.21     /24  ------------T--------------   ANY    2 /12  VR-Default 
+SUCCESS: VLAN IT_Network created on IT_Network.
+Connecting to MGMT_Network (10.10.1.22)...
+Creating VLAN MGMT_Network with tag 30...
+$ create vlan MGMT_Network
+$ configure vlan MGMT_Network tag 30
+
+Untagged ports auto-move: Inform
+-----------------------------------------------------------------------------------------------
+Name            VID  Protocol Addr       Flags                         Proto  Ports  Virtual   
+                                                                              Active router
+                                                                              /Total
+-----------------------------------------------------------------------------------------------
+Default         1    10.10.1.22     /24  ------------T--------------   ANY    2 /12  VR-Default 
+Mgmt            4095 10.10.1.6      /24  ---------------------------   ANY    0 /1   VR-Mgmt    
+MGMT_Network    30   -----------------------------------------------   ANY    0 /0   VR-Default 
+-----------------------------------------------------------------------------------------------
+Flags : (B) BFD Enabled, (c) 802.1ad customer VLAN, (C) EAPS Control VLAN,
+        (d) Dynamically created VLAN, (D) VLAN Admin Disabled,
+        (E) ESRP Enabled, (f) IP Forwarding Enabled,
+        (F) Learning Disabled, (i) ISIS Enabled,
+        (I) Inter-Switch Connection VLAN for MLAG, (k) PTP Configured,
+        (l) MPLS Enabled, (L) Loopback Enabled, (m) IPmc Forwarding Enabled,
+        (M) Translation Member VLAN or Subscriber VLAN, (n) IP Multinetting Enabled,
+        (N) Network Login VLAN, (o) OSPF Enabled, (O) Virtual Network Overlay,
+        (p) PIM Enabled, (P) EAPS protected VLAN, (r) RIP Enabled,
+        (R) Sub-VLAN IP Range Configured, (s) Sub-VLAN, (S) Super-VLAN,
+        (t) Translation VLAN or Network VLAN, (T) Member of STP Domain,
+        (v) VRRP Enabled, (V) VPLS Enabled, (w) Layer 2 Forwarding Disabled,
+        (W) VPWS Enabled, (Y) Policy Enabled
+
+Total number of VLAN(s) : 3 
+SUCCESS: VLAN MGMT_Network created on MGMT_Network.
+Connecting to ACCT_Network (10.10.1.23)...
+Creating VLAN ACCT_Network with tag 20...
+$ create vlan ACCT_Network
+$ configure vlan ACCT_Network tag 20
+
+Untagged ports auto-move: Inform
+-----------------------------------------------------------------------------------------------
+Name            VID  Protocol Addr       Flags                         Proto  Ports  Virtual   
+                                                                              Active router
+                                                                              /Total
+-----------------------------------------------------------------------------------------------
+ACCT_Network    20   -----------------------------------------------   ANY    0 /0   VR-Default 
+Default         1    10.10.1.23     /24  ------------T--------------   ANY    2 /12  VR-Default 
+Mgmt            4095 10.10.1.7      /24  ---------------------------   ANY    0 /1   VR-Mgmt    
+-----------------------------------------------------------------------------------------------
+Flags : (B) BFD Enabled, (c) 802.1ad customer VLAN, (C) EAPS Control VLAN,
+        (d) Dynamically created VLAN, (D) VLAN Admin Disabled,
+        (E) ESRP Enabled, (f) IP Forwarding Enabled,
+        (F) Learning Disabled, (i) ISIS Enabled,
+        (I) Inter-Switch Connection VLAN for MLAG, (k) PTP Configured,
+        (l) MPLS Enabled, (L) Loopback Enabled, (m) IPmc Forwarding Enabled,
+        (M) Translation Member VLAN or Subscriber VLAN, (n) IP Multinetting Enabled,
+        (N) Network Login VLAN, (o) OSPF Enabled, (O) Virtual Network Overlay,
+        (p) PIM Enabled, (P) EAPS protected VLAN, (r) RIP Enabled,
+        (R) Sub-VLAN IP Range Configured, (s) Sub-VLAN, (S) Super-VLAN,
+        (t) Translation VLAN or Network VLAN, (T) Member of STP Domain,
+        (v) VRRP Enabled, (V) VPLS Enabled, (w) Layer 2 Forwarding Disabled,
+        (W) VPWS Enabled, (Y) Policy Enabled
+
+Total number of VLAN(s) : 3 
+SUCCESS: VLAN ACCT_Network created on ACCT_Network.
+Connecting to User_Network (10.10.1.24)...
+Creating VLAN User_Network with tag 40...
+$ create vlan User_Network
+$ configure vlan User_Network tag 40
+
+Untagged ports auto-move: Inform
+-----------------------------------------------------------------------------------------------
+Name            VID  Protocol Addr       Flags                         Proto  Ports  Virtual   
+                                                                              Active router
+                                                                              /Total
+-----------------------------------------------------------------------------------------------
+Default         1    10.10.1.24     /24  ------------T--------------   ANY    5 /12  VR-Default 
+Mgmt            4095 10.10.1.8      /24  ---------------------------   ANY    0 /1   VR-Mgmt    
+User_Network    40   -----------------------------------------------   ANY    0 /0   VR-Default 
+-----------------------------------------------------------------------------------------------
+Flags : (B) BFD Enabled, (c) 802.1ad customer VLAN, (C) EAPS Control VLAN,
+        (d) Dynamically created VLAN, (D) VLAN Admin Disabled,
+        (E) ESRP Enabled, (f) IP Forwarding Enabled,
+        (F) Learning Disabled, (i) ISIS Enabled,
+        (I) Inter-Switch Connection VLAN for MLAG, (k) PTP Configured,
+        (l) MPLS Enabled, (L) Loopback Enabled, (m) IPmc Forwarding Enabled,
+        (M) Translation Member VLAN or Subscriber VLAN, (n) IP Multinetting Enabled,
+        (N) Network Login VLAN, (o) OSPF Enabled, (O) Virtual Network Overlay,
+        (p) PIM Enabled, (P) EAPS protected VLAN, (r) RIP Enabled,
+        (R) Sub-VLAN IP Range Configured, (s) Sub-VLAN, (S) Super-VLAN,
+        (t) Translation VLAN or Network VLAN, (T) Member of STP Domain,
+        (v) VRRP Enabled, (V) VPLS Enabled, (w) Layer 2 Forwarding Disabled,
+        (W) VPWS Enabled, (Y) Policy Enabled
+
+Total number of VLAN(s) : 3 
+SUCCESS: VLAN User_Network created on User_Network.
+4/4 VLANs created successfully.

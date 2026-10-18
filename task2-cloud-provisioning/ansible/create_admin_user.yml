@@ -1,0 +1,36 @@
+---
+# create_admin_user.yml
+
+- name: Create AdminWGU account with root access on all servers
+  hosts: servers
+  become: yes
+  gather_facts: yes
+
+  vars:
+    admin_group: "{{ 'wheel' if ansible_facts['os_family'] == 'RedHat' else 'sudo' }}"
+    # Provide via Ansible Vault or -e admin_password=... (never commit it)
+    admin_password: "{{ lookup('env', 'ADMIN_PASSWORD') }}"
+
+  tasks:
+    - name: Create AdminWGU user account
+      user:
+        name: AdminWGU
+        password: "{{ admin_password | password_hash('sha512') }}"
+        groups: "{{ admin_group }}"
+        append: yes
+        shell: /bin/bash
+        state: present
+      register: create_user_output
+
+    - name: Display user creation result
+      debug:
+        var: create_user_output
+
+    - name: Verify AdminWGU account exists
+      command: id AdminWGU
+      register: verify_user_output
+      changed_when: false
+
+    - name: Display verification output
+      debug:
+        var: verify_user_output.stdout

@@ -1,0 +1,31 @@
+---
+- name: Create Local-Admin account on Access Closet 1 switches
+  hosts: switches
+  gather_facts: no
+  # Prompted at runtime so the password is never stored in the repo
+  vars_prompt:
+    - name: local_admin_password
+      prompt: "Password for Local-Admin"
+      private: true
+  connection: network_cli
+
+  tasks:
+    - name: Create Local-Admin account with Read/Write access
+      extreme.exos.exos_config:
+        lines:
+          - create account admin Local-Admin {{ local_admin_password }}
+      register: create_account_output
+
+    - name: Display command output for verification
+      debug:
+        var: create_account_output
+
+    - name: Verify Local-Admin account exists
+      extreme.exos.exos_command:
+        commands:
+          - show account
+      register: show_account_output
+
+    - name: Display verification output
+      debug:
+        var: show_account_output.stdout

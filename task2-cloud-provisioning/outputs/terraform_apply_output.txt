@@ -1,0 +1,10 @@
+data.aws_subnets.lab
+data.aws_vpc.lab
+aws_instance.rhel_server
+aws_instance.ubuntu_server
+aws_key_pair.d417_key
+aws_security_group.d417_sg
+local_file.d417_private_key
+tls_private_key.d417_key
+rhel_public_ip = "<redacted>"
+ubuntu_public_ip = "<redacted>"

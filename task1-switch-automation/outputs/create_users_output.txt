@@ -1,0 +1,149 @@
+
+PLAY [Create Local-Admin account on Access Closet 1 switches] ******************
+
+TASK [Create Local-Admin account with Read/Write access] ***********************
+changed: [IT_Network]
+changed: [User_Network]
+changed: [ACCT_Network]
+changed: [MGMT_Network]
+
+TASK [Display command output for verification] *********************************
+ok: [IT_Network] => {
+    "create_account_output": {
+        "changed": true,
+        "commands": [
+            "create account admin Local-Admin ********"
+        ],
+        "deprecations": [
+            {
+                "collection_name": "ansible.builtin",
+                "deprecator": {
+                    "resolved_name": "ansible.builtin",
+                    "type": null
+                },
+                "msg": "The paramiko connection plugin is deprecated.",
+                "version": "2.21"
+            }
+        ],
+        "failed": false,
+        "updates": [
+            "create account admin Local-Admin ********"
+        ],
+        "warnings": [
+            "ansible-pylibssh not installed, falling back to paramiko"
+        ]
+    }
+}
+ok: [MGMT_Network] => {
+    "create_account_output": {
+        "changed": true,
+        "commands": [
+            "create account admin Local-Admin ********"
+        ],
+        "deprecations": [
+            {
+                "collection_name": "ansible.builtin",
+                "deprecator": {
+                    "resolved_name": "ansible.builtin",
+                    "type": null
+                },
+                "msg": "The paramiko connection plugin is deprecated.",
+                "version": "2.21"
+            }
+        ],
+        "failed": false,
+        "updates": [
+            "create account admin Local-Admin ********"
+        ],
+        "warnings": [
+            "ansible-pylibssh not installed, falling back to paramiko"
+        ]
+    }
+}
+ok: [ACCT_Network] => {
+    "create_account_output": {
+        "changed": true,
+        "commands": [
+            "create account admin Local-Admin ********"
+        ],
+        "deprecations": [
+            {
+                "collection_name": "ansible.builtin",
+                "deprecator": {
+                    "resolved_name": "ansible.builtin",
+                    "type": null
+                },
+                "msg": "The paramiko connection plugin is deprecated.",
+                "version": "2.21"
+            }
+        ],
+        "failed": false,
+        "updates": [
+            "create account admin Local-Admin ********"
+        ],
+        "warnings": [
+            "ansible-pylibssh not installed, falling back to paramiko"
+        ]
+    }
+}
+ok: [User_Network] => {
+    "create_account_output": {
+        "changed": true,
+        "commands": [
+            "create account admin Local-Admin ********"
+        ],
+        "deprecations": [
+            {
+                "collection_name": "ansible.builtin",
+                "deprecator": {
+                    "resolved_name": "ansible.builtin",
+                    "type": null
+                },
+                "msg": "The paramiko connection plugin is deprecated.",
+                "version": "2.21"
+            }
+        ],
+        "failed": false,
+        "updates": [
+            "create account admin Local-Admin ********"
+        ],
+        "warnings": [
+            "ansible-pylibssh not installed, falling back to paramiko"
+        ]
+    }
+}
+
+TASK [Verify Local-Admin account exists] ***************************************
+ok: [MGMT_Network]
+ok: [User_Network]
+ok: [IT_Network]
+ok: [ACCT_Network]
+
+TASK [Display verification output] *********************************************
+ok: [IT_Network] => {
+    "show_account_output.stdout": [
+        "User Name  Access LoginOK  Failed  Consec. Fail  State\n--------------------------------  ------ -------  ------  ------------  --------\n                           admin     R/W       2       0             0   Enabled\n                            user     RO        0       0             0   Enabled\n                         ansible     R/W       0       0             0   Enabled\n                         student     R/W       1       0             0   Enabled\n                     Local-Admin     R/W       0       0             0   Enabled"
+    ]
+}
+ok: [MGMT_Network] => {
+    "show_account_output.stdout": [
+        "User Name  Access LoginOK  Failed  Consec. Fail  State\n--------------------------------  ------ -------  ------  ------------  --------\n                           admin     R/W       1       0             0   Enabled\n                            user     RO        0       0             0   Enabled\n                         ansible     R/W       0       0             0   Enabled\n                         student     R/W       1       4             0   Enabled\n                     Local-Admin     R/W       0       0             0   Enabled"
+    ]
+}
+ok: [ACCT_Network] => {
+    "show_account_output.stdout": [
+        "User Name  Access LoginOK  Failed  Consec. Fail  State\n--------------------------------  ------ -------  ------  ------------  --------\n                           admin     R/W       1       0             0   Enabled\n                            user     RO        0       0             0   Enabled\n                         ansible     R/W       0       0             0   Enabled\n                         student     R/W       1       0             0   Enabled\n                     Local-Admin     R/W       0       0             0   Enabled"
+    ]
+}
+ok: [User_Network] => {
+    "show_account_output.stdout": [
+        "User Name  Access LoginOK  Failed  Consec. Fail  State\n--------------------------------  ------ -------  ------  ------------  --------\n                           admin     R/W       1       0             0   Enabled\n                            user     RO        0       0             0   Enabled\n                         ansible     R/W       0       0             0   Enabled\n                         student     R/W       1       0             0   Enabled\n                     Local-Admin     R/W       0       0             0   Enabled"
+    ]
+}
+
+PLAY RECAP *********************************************************************
+ACCT_Network               : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+IT_Network                 : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+MGMT_Network               : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+User_Network               : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

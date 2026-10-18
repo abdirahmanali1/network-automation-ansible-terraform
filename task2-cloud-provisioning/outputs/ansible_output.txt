@@ -1,0 +1,63 @@
+
+PLAY [Create AdminWGU account with root access on all servers] *****************
+
+TASK [Gathering Facts] *********************************************************
+ok: [RHEL_Server]
+ok: [Ubuntu_Server]
+
+TASK [Create AdminWGU user account] ********************************************
+changed: [Ubuntu_Server]
+changed: [RHEL_Server]
+
+TASK [Display user creation result] ********************************************
+ok: [Ubuntu_Server] => {
+    "create_user_output": {
+        "append": true,
+        "changed": true,
+        "comment": "",
+        "failed": false,
+        "group": 1002,
+        "groups": "sudo",
+        "home": "/home/AdminWGU",
+        "move_home": false,
+        "name": "AdminWGU",
+        "password": "NOT_LOGGING_PASSWORD",
+        "shell": "/bin/bash",
+        "state": "present",
+        "uid": 1002
+    }
+}
+ok: [RHEL_Server] => {
+    "create_user_output": {
+        "append": true,
+        "changed": true,
+        "comment": "",
+        "failed": false,
+        "group": 1001,
+        "groups": "wheel",
+        "home": "/home/AdminWGU",
+        "move_home": false,
+        "name": "AdminWGU",
+        "password": "NOT_LOGGING_PASSWORD",
+        "shell": "/bin/bash",
+        "state": "present",
+        "uid": 1001
+    }
+}
+
+TASK [Verify AdminWGU account exists] ******************************************
+ok: [Ubuntu_Server]
+ok: [RHEL_Server]
+
+TASK [Display verification output] *********************************************
+ok: [Ubuntu_Server] => {
+    "verify_user_output.stdout": "uid=1002(AdminWGU) gid=1002(AdminWGU) groups=1002(AdminWGU),27(sudo)"
+}
+ok: [RHEL_Server] => {
+    "verify_user_output.stdout": "uid=1001(AdminWGU) gid=1001(AdminWGU) groups=1001(AdminWGU),10(wheel)"
+}
+
+PLAY RECAP *********************************************************************
+RHEL_Server                : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Ubuntu_Server              : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

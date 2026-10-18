@@ -1,0 +1,30 @@
+Script run: 2026-08-26 00:54:25
+Switch Name: User_Network
+Switch IP Address: 10.10.1.24
+Platform: extreme_exos
+vlan_purpose: User Network access layer VLAN
+connected_to: Local_Switch (10.10.1.20)
+ssh_enabled: True
+
+Switch Name: ACCT_Network
+Switch IP Address: 10.10.1.23
+Platform: extreme_exos
+vlan_purpose: Accounting Network access layer VLAN
+connected_to: Local_Switch (10.10.1.20)
+ssh_enabled: True
+
+Switch Name: MGMT_Network
+Switch IP Address: 10.10.1.22
+Platform: extreme_exos
+vlan_purpose: Management Network access layer VLAN
+connected_to: Local_Switch (10.10.1.20)
+ssh_enabled: True
+
+Switch Name: IT_Network
+Switch IP Address: 10.10.1.21
+Platform: extreme_exos
+vlan_purpose: IT Network access layer VLAN
+connected_to: Local_Switch (10.10.1.20)
+ssh_enabled: True
+
+Inventory file written to: switch_inventory.ini
